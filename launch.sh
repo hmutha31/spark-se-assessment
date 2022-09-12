@@ -2,6 +2,7 @@
 
 export FLASK_APP=project.server
 export APP_SETTINGS="project.server.config.DevelopmentConfig"
+pip install requests
 flask db init
 flask db migrate
 flask db upgrade
