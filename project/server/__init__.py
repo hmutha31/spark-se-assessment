@@ -14,7 +14,7 @@ if os.environ.get('FLASK_COVERAGE'):
     )
     COV.start()
 
-import click
+#import click
 from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
@@ -51,12 +51,6 @@ def getUsersIndex() :
         content_type = r.headers['content-type'],
     )
 
-
-if __name__ == "__init__":
-    # Setting debug to True enables debug output. This line should be
-    # removed before deploying a production app.
-    app.debug = True
-    app.run()
 
 from project.server.auth.views import auth_blueprint
 app.register_blueprint(auth_blueprint)
