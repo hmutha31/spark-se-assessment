@@ -52,6 +52,12 @@ def getUsersIndex() :
     )
 
 
+if __name__ == "__init__":
+    # Setting debug to True enables debug output. This line should be
+    # removed before deploying a production app.
+    app.debug = True
+    app.run()
+
 from project.server.auth.views import auth_blueprint
 app.register_blueprint(auth_blueprint)
 
