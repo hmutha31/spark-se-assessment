@@ -1,2 +1,2 @@
-web: gunicorn __init__:server
+web: gunicorn project:__init__
 
