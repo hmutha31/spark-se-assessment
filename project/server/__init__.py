@@ -19,6 +19,9 @@ from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+import requests
+from flask import Response
+
 
 app = Flask(__name__)
 
@@ -37,6 +40,17 @@ migrate = Migrate(app, db)
 @app.route("/")
 def root_site():
     return "<p>It works!</p>"
+
+
+@app.route("/users/index")
+def getUsersIndex() :
+    r = requests.get("http://assessment.519.buspark.io:8000/users/index")
+    return Response(
+        r.text,
+        status = r.status_code,
+        content_type = r.headers['content-type'],
+    )
+
 
 from project.server.auth.views import auth_blueprint
 app.register_blueprint(auth_blueprint)
