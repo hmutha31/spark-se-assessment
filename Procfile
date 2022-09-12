@@ -1,2 +1,2 @@
-web: gunicorn project:__init__
+web: flask run
 
