@@ -1,4 +1,2 @@
-web: gunicorn project:app
-heroku ps:scale web=1
-
+web: gunicorn __init__:server
 
